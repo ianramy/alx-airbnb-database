@@ -7,7 +7,7 @@ CREATE INDEX idx_reviews_property_id ON reviews(property_id);
 CREATE INDEX idx_users_id ON users(id);
 
 -- AFTER indexing:
-EXPLAIN SELECT * FROM bookings WHERE user_id = 42;
+EXPLAIN ANALYZE SELECT * FROM bookings WHERE user_id = 42;
 
 -- AFTER indexing:
 EXPLAIN SELECT u.name, b.start_date
@@ -15,4 +15,4 @@ FROM bookings b
 JOIN users u ON b.user_id = u.id;
 
 -- AFTER indexing:
-EXPLAIN SELECT * FROM bookings WHERE start_date BETWEEN '2025-01-01' AND '2025-12-31';
+EXPLAIN ANALYZE SELECT * FROM bookings WHERE start_date BETWEEN '2025-01-01' AND '2025-12-31';
