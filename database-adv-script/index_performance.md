@@ -4,6 +4,8 @@
 
 Queries with WHERE user_id or JOINs were slow due to full table scans.
 
+EXPLAIN ANALYZE SELECT * FROM bookings WHERE user_id = 42;
+
 ## After Indexing
 
 Created indexes:
@@ -15,3 +17,5 @@ Created indexes:
 - users(id)
 
 Improved execution time from ~400ms to ~80ms for filtered queries.
+
+EXPLAIN ANALYZE SELECT * FROM bookings WHERE user_id = 42;
