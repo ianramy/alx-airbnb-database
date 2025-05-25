@@ -18,7 +18,8 @@ SELECT
     r.rating,
     r.comment
 FROM properties p
-LEFT JOIN reviews r ON p.id = r.property_id;
+LEFT JOIN reviews r ON p.id = r.property_id
+ORDER BY p.id;
 
 -- FULL OUTER JOIN: Users and Bookings (MySQL workaround using UNION)
 SELECT
