@@ -24,7 +24,8 @@ JOIN users u ON b.user_id = u.id
 JOIN properties p ON b.property_id = p.id
 JOIN payments pay ON pay.booking_id = b.id
 WHERE b.start_date >= '2024-01-01'
-  AND u.id IS NOT NULL;
+  AND u.id IS NOT NULL
+ORDER BY b.start_date DESC;
 
 -- EXPLAIN the optimized query to analyze performance
 EXPLAIN
@@ -39,4 +40,5 @@ JOIN users u ON b.user_id = u.id
 JOIN properties p ON b.property_id = p.id
 JOIN payments pay ON pay.booking_id = b.id
 WHERE b.start_date >= '2024-01-01'
-  AND u.id IS NOT NULL;
+  AND u.id IS NOT NULL
+ORDER BY b.start_date DESC;
